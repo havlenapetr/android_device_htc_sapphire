@@ -16,9 +16,9 @@
 
 DEVICE=sapphire
 
-mkdir -p ../../../vendor/htc/$DEVICE
+mkdir -p ../../../../vendor/htc/$DEVICE
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/device_$DEVICE-vendor.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../../vendor/htc/$DEVICE/device_$DEVICE-vendor.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,7 @@ mkdir -p ../../../vendor/htc/$DEVICE
 \$(call inherit-product, vendor/htc/__DEVICE__/device___DEVICE__-vendor-blobs.mk)
 EOF
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/BoardConfigVendor.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../../vendor/htc/$DEVICE/BoardConfigVendor.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
