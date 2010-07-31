@@ -26,6 +26,15 @@ USE_CAMERA_STUB := true
 
 TARGET_BOOTLOADER_BOARD_NAME := sapphire
 
+BOARD_KERNEL_BASE := 0x19200000
+
+# No authoring clock for OpenCore on DS
+BOARD_NO_PV_AUTHORING_CLOCK := true
+
+BOARD_USES_ECLAIR_LIBCAMERA := true
+
+BOARD_USES_QCOM_LIBS := true
+
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00040000 00020000 "misc"

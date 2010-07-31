@@ -30,15 +30,6 @@ PRODUCT_DEVICE := sapphire
 PRODUCT_MODEL := Full Android on Sapphire
 PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP = $(TOP)/device/htc/sapphire/prelink-linux-arm_ds.map
 
-BOARD_KERNEL_BASE := 0x19200000
-
-# No authoring clock for OpenCore on DS
-BOARD_NO_PV_AUTHORING_CLOCK := true
-
-BOARD_USES_ECLAIR_LIBCAMERA := true
-
-BOARD_USES_QCOM_LIBS := true
-
 # TTS languages
 include external/svox/pico/lang/PicoLangDeDeInSystem.mk
 include external/svox/pico/lang/PicoLangEnGBInSystem.mk
