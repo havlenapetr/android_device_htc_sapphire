@@ -25,7 +25,7 @@ $(call inherit-product, device/htc/sapphire/device_sapphire_us.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := iSapphire
+PRODUCT_NAME := sapphire
 PRODUCT_DEVICE := sapphire
 PRODUCT_MODEL := Full Android on Sapphire
 PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP = $(TOP)/device/htc/sapphire/prelink-linux-arm_ds.map

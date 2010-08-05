@@ -31,8 +31,6 @@ BOARD_KERNEL_BASE := 0x19200000
 # No authoring clock for OpenCore on DS
 BOARD_NO_PV_AUTHORING_CLOCK := true
 
-BOARD_USES_ECLAIR_LIBCAMERA := true
-
 BOARD_USES_QCOM_LIBS := true
 
 # # cat /proc/mtd
