@@ -21,7 +21,7 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
-$(call inherit-product, device/htc/sapphire/device_sapphire_us.mk)
+$(call inherit-product, device/htc/sapphire/device_sapphire_eu.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 # Discard inherited values and use our own instead.
@@ -29,6 +29,7 @@ PRODUCT_NAME := sapphire
 PRODUCT_DEVICE := sapphire
 PRODUCT_MODEL := Full Android on Sapphire
 PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP = $(TOP)/device/htc/sapphire/prelink-linux-arm_ds.map
+WITH_GOOGLE := true
 
 # TTS languages
 include external/svox/pico/lang/PicoLangDeDeInSystem.mk
@@ -37,3 +38,7 @@ include external/svox/pico/lang/PicoLangEnUsInSystem.mk
 include external/svox/pico/lang/PicoLangEsEsInSystem.mk
 include external/svox/pico/lang/PicoLangFrFrInSystem.mk
 include external/svox/pico/lang/PicoLangItItInSystem.mk
+
+ifeq ($(WITH_GOOGLE),true)
+include vendor/google/google.mk
+endif
