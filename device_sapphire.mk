@@ -17,7 +17,19 @@
 DEVICE_PACKAGE_OVERLAYS := device/htc/sapphire/overlay
 
 PRODUCT_PACKAGES := \
-    sensors.sapphire
+    sensors.sapphire \
+    lights.msm7k \
+    gralloc.msm7k \
+    copybit.msm7k
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/htc/sapphire/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/htc/sapphire/device_sapphire-vendor.mk)

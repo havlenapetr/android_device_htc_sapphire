@@ -28,7 +28,16 @@ $(file) : $(LOCAL_PATH)/init.sapphire.rc | $(ACP)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := sapphire-keypad.kcm
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_KEY_CHAR_MAP)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wlan.ko
+LOCAL_MODULE_TAGS := debug optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
 
 include device/htc/dream-sapphire/AndroidBoardCommon.mk
 
