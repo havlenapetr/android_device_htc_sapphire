@@ -16,11 +16,33 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/htc/sapphire/overlay
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     sensors.sapphire \
     lights.msm7k \
     gralloc.msm7k \
     copybit.msm7k
+
+PRODUCT_PACKAGES += \
+    libboot_arch_armv6 \
+    libboot_arch_msm7k \
+    libboot \
+    libboot_c \
+    nandwrite \
+    usbloader \
+    tiwlan.ini \
+    wlan_loader \
+    libCustomWifi 
+
+# add camera and omx libraries
+PRODUCT_PACKAGES += \
+    libcamera \
+    libOmxCore \
+    libmm-omxcore \
+    libqcomm_omx
+
+# if we have flac player in framework, we can build this lib
+PRODUCT_PACKAGES += \
+    libFLAC
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/sapphire/kernel
@@ -39,4 +61,3 @@ $(call inherit-product, device/htc/dream-sapphire/device_dream_sapphire.mk)
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
-

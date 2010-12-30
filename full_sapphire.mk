@@ -29,7 +29,7 @@ PRODUCT_NAME := sapphire
 PRODUCT_DEVICE := sapphire
 PRODUCT_MODEL := Full Android on Sapphire
 PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP = $(TOP)/device/htc/sapphire/prelink-linux-arm_ds.map
-WITH_GOOGLE := true
+WITH_GOOGLE := false
 
 # TTS languages
 include external/svox/pico/lang/PicoLangDeDeInSystem.mk
