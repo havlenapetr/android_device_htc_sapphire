@@ -12,5 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+ifeq ($(TARGET_DEVICE),sapphire)
 include $(call all-named-subdir-makefiles, recovery)
+endif
